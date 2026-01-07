@@ -92,7 +92,7 @@ def train() -> None:
 
     criterion = nn.CrossEntropyLoss()
     optimizer = Adam(model.parameters(), lr=args.lr, weight_decay=args.weight_decay)
-    scheduler = ReduceLROnPlateau(optimizer, mode="max", factor=0.1, patience=5, verbose=True)
+    scheduler = ReduceLROnPlateau(optimizer, mode="max", factor=0.1, patience=5)
 
     history = []
     best_acc = 0.0
